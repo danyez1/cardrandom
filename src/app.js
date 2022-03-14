@@ -1,5 +1,6 @@
 /* eslint-disable */
 
+import { createPopper } from "@popperjs/core";
 import "bootstrap";
 import "./style.css";
 const suits = ["&spades;", "&hearts;", "&diams;", "&clubs;"];
@@ -14,6 +15,17 @@ function getRandomNumber(min, max) {
 
 let suitsIndex = getRandomNumber(0, suits.length - 1);
 let numbersIndex = getRandomNumber(0, numbers.length - 1);
+const suitsValue = suits[suitsIndex];
+const numberValue = numbers[numbersIndex];
+const suitTop = document.querySelector(".suits.top");
+const suitbotom = document.querySelector(".suits.bottom");
+const suitsTochange = ["&hearts;", "&diams;"];
+const colorShouldBeRed = suitsTochange.includes(suitsValue);
+
+if (colorShouldBeRed) {
+  suitTop.classList.add("red");
+  suitbotom.classList.add("red");
+}
 
 window.onload = function() {
   let cardrandom = document.querySelector(".suits.top");
@@ -24,4 +36,9 @@ window.onload = function() {
 
   let suitsRandom = document.querySelector(".suits.bottom");
   suitsRandom.innerHTML = suits[suitsIndex];
+
+  if (colorShouldBeRed) {
+    suitTop.classList.add("red");
+    suitbotom.classList.add("red");
+  }
 };

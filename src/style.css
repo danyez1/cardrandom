@@ -4,18 +4,22 @@ body {
 }
 .card {
   display: flex;
+  margin-top: 100px;
+  margin-left: 800px;
 
-  margin: auto;
   max-width: 300px;
   min-height: 400px;
-  padding: auto;
+  padding: 20px;
   flex-direction: column;
   justify-content: space-between;
+  border-radius: 4px;
+  border: 1px solid black;
+  position: relative;
 }
 .suits.top {
   display: flex;
+  align-self: flex-start 20px;
   font-size: 54px;
-  align-self: flex-start;
 }
 .number {
   display: flex;
@@ -25,6 +29,9 @@ body {
 .suits.bottom {
   display: flex;
   font-size: 54px;
-
   align-self: flex-end;
+  transform: rotate(0.5turn);
+}
+.red {
+  color: red;
 }
